@@ -1,9 +1,9 @@
 [
   {
-    "file": "data/p001_2025-10-17.csv",
-    "player_id": "001",
-    "player_name": "Player001",
-    "date": "2025-10-17",
+    "file": "data/p002_2025-10-03_1302_1501.csv",
+    "player_id": "002",
+    "player_name": "Player002",
+    "date": "2025-10-03",
     "session_type": "default",
     "start_time": "1302",
     "end_time": "1501"
