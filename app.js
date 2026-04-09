@@ -5,6 +5,9 @@ const state = {
   currentHrRows: []
 };
 
+const MAX_LINE_POINTS = 5000;
+const MAX_SCATTER_POINTS = 3000;
+
 document.addEventListener("DOMContentLoaded", async () => {
   try {
     await initialize();
@@ -122,17 +125,46 @@ async function renderCurrentSelection() {
     loadText(meta.hr_file)
   ]);
 
-  const accRows = parseCSV(accText).map(normalizeAccRow);
-  const hrRows = parseCSV(hrText).map(normalizeHrRow);
+  const accRows = parseCSV(accText).map(normalizeAccRow).filter(r =>
+    Number.isFinite(r.t) && Number.isFinite(r.acc_mag)
+  );
+
+  const hrRows = parseCSV(hrText).map(normalizeHrRow).filter(r =>
+    Number.isFinite(r.t) && Number.isFinite(r.heart_rate)
+  );
 
   state.currentAccRows = accRows;
   state.currentHrRows = hrRows;
 
-  renderSummary(meta, accRows, hrRows);
-  renderMetaInfo(meta, accRows, hrRows);
-  renderHRChart(hrRows);
-  renderAccChart(accRows);
-  renderScatter(accRows, hrRows);
+  clearDisplay();
+
+  try {
+    renderSummary(meta, accRows, hrRows);
+    renderMetaInfo(meta, accRows, hrRows);
+  } catch (error) {
+    console.error("summary/meta render error:", error);
+  }
+
+  try {
+    renderHRChart(hrRows);
+  } catch (error) {
+    console.error("hrChart render error:", error);
+    document.getElementById("hrChart").innerHTML = "<p>心拍グラフの描画に失敗しました。</p>";
+  }
+
+  try {
+    renderAccChart(accRows);
+  } catch (error) {
+    console.error("accChart render error:", error);
+    document.getElementById("accChart").innerHTML = "<p>加速度グラフの描画に失敗しました。</p>";
+  }
+
+  try {
+    renderScatter(accRows, hrRows);
+  } catch (error) {
+    console.error("scatterChart render error:", error);
+    document.getElementById("scatterChart").innerHTML = "<p>散布図の描画に失敗しました。</p>";
+  }
 }
 
 async function loadText(path) {
@@ -206,42 +238,56 @@ function basicStats(values) {
 }
 
 function correlation(x, y) {
-  const pairs = x
-    .map((v, i) => [v, y[i]])
-    .filter(([a, b]) => Number.isFinite(a) && Number.isFinite(b));
+  let n = 0;
+  let sumX = 0;
+  let sumY = 0;
+  let sumXY = 0;
+  let sumXX = 0;
+  let sumYY = 0;
 
-  const n = pairs.length;
-  if (n < 2) return NaN;
+  for (let i = 0; i < Math.min(x.length, y.length); i++) {
+    const a = x[i];
+    const b = y[i];
+    if (!Number.isFinite(a) || !Number.isFinite(b)) continue;
 
-  const xs = pairs.map(p => p[0]);
-  const ys = pairs.map(p => p[1]);
-
-  const meanX = xs.reduce((a, b) => a + b, 0) / n;
-  const meanY = ys.reduce((a, b) => a + b, 0) / n;
-
-  let numerator = 0;
-  let denomX = 0;
-  let denomY = 0;
-
-  for (let i = 0; i < n; i++) {
-    const dx = xs[i] - meanX;
-    const dy = ys[i] - meanY;
-    numerator += dx * dy;
-    denomX += dx * dx;
-    denomY += dy * dy;
+    n += 1;
+    sumX += a;
+    sumY += b;
+    sumXY += a * b;
+    sumXX += a * a;
+    sumYY += b * b;
   }
 
-  return numerator / Math.sqrt(denomX * denomY);
+  if (n < 2) return NaN;
+
+  const numerator = n * sumXY - sumX * sumY;
+  const denominator = Math.sqrt((n * sumXX - sumX * sumX) * (n * sumYY - sumY * sumY));
+
+  if (!Number.isFinite(denominator) || denominator === 0) return NaN;
+  return numerator / denominator;
 }
 
-function matchAccWithLatestHr(accRows, hrRows) {
+function downsampleRows(rows, maxPoints) {
+  if (rows.length <= maxPoints) return rows;
+
+  const step = Math.ceil(rows.length / maxPoints);
+  const sampled = [];
+  for (let i = 0; i < rows.length; i += step) {
+    sampled.push(rows[i]);
+  }
+  return sampled;
+}
+
+function matchAccWithLatestHr(accRows, hrRows, maxPoints = MAX_SCATTER_POINTS) {
+  const accSampled = downsampleRows(accRows, maxPoints);
   const result = [];
-  if (accRows.length === 0 || hrRows.length === 0) return result;
+
+  if (accSampled.length === 0 || hrRows.length === 0) return result;
 
   let j = 0;
   let latestHr = null;
 
-  for (const acc of accRows) {
+  for (const acc of accSampled) {
     while (j < hrRows.length && hrRows[j].t <= acc.t) {
       if (Number.isFinite(hrRows[j].heart_rate)) {
         latestHr = hrRows[j].heart_rate;
@@ -264,7 +310,7 @@ function matchAccWithLatestHr(accRows, hrRows) {
 function renderSummary(meta, accRows, hrRows) {
   const accValues = accRows.map(r => r.acc_mag);
   const hrValues = hrRows.map(r => r.heart_rate);
-  const matched = matchAccWithLatestHr(accRows, hrRows);
+  const matched = matchAccWithLatestHr(accRows, hrRows, 2000);
 
   const accStats = basicStats(accValues);
   const hrStats = basicStats(hrValues);
@@ -318,14 +364,15 @@ function renderMetaInfo(meta, accRows, hrRows) {
 }
 
 function renderHRChart(hrRows) {
-  const x = hrRows.map(r => r.timestamp);
-  const y = hrRows.map(r => r.heart_rate);
+  const sampled = downsampleRows(hrRows, MAX_LINE_POINTS);
+  const x = sampled.map(r => r.timestamp);
+  const y = sampled.map(r => r.heart_rate);
 
   Plotly.newPlot("hrChart", [
     {
       x,
       y,
-      type: "scatter",
+      type: "scattergl",
       mode: "lines",
       name: "Heart Rate"
     }
@@ -339,14 +386,15 @@ function renderHRChart(hrRows) {
 }
 
 function renderAccChart(accRows) {
-  const x = accRows.map(r => r.timestamp);
-  const y = accRows.map(r => r.acc_mag);
+  const sampled = downsampleRows(accRows, MAX_LINE_POINTS);
+  const x = sampled.map(r => r.timestamp);
+  const y = sampled.map(r => r.acc_mag);
 
   Plotly.newPlot("accChart", [
     {
       x,
       y,
-      type: "scatter",
+      type: "scattergl",
       mode: "lines",
       name: "Acceleration Magnitude"
     }
@@ -360,7 +408,7 @@ function renderAccChart(accRows) {
 }
 
 function renderScatter(accRows, hrRows) {
-  const matched = matchAccWithLatestHr(accRows, hrRows);
+  const matched = matchAccWithLatestHr(accRows, hrRows, MAX_SCATTER_POINTS);
 
   const x = matched.map(r => r.acc_mag);
   const y = matched.map(r => r.heart_rate);
@@ -371,7 +419,7 @@ function renderScatter(accRows, hrRows) {
       x,
       y,
       text,
-      type: "scatter",
+      type: "scattergl",
       mode: "markers",
       name: "HR vs ACC"
     }
@@ -389,7 +437,13 @@ function clearDisplay() {
   document.getElementById("metaInfo").innerHTML = "";
 
   ["hrChart", "accChart", "scatterChart"].forEach(id => {
-    Plotly.purge(id);
-    document.getElementById(id).innerHTML = "";
+    const el = document.getElementById(id);
+    if (el) {
+      try {
+        Plotly.purge(id);
+      } catch (e) {
+      }
+      el.innerHTML = "";
+    }
   });
 }
