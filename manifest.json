@@ -6,7 +6,6 @@
     "session_type": "default",
     "start_time": "1302",
     "end_time": "1501",
-    "acc_file": "data/p002_2025-10-03_1302_1501_acc.csv",
-    "hr_file": "data/p002_2025-10-03_1302_1501_hr.csv"
+    "file": "data/p002_2025-10-03_1302_1501.csv"
   }
 ]
