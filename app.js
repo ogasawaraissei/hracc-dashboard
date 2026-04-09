@@ -1,12 +1,10 @@
 const state = {
   manifest: [],
   currentMeta: null,
-  currentAccRows: [],
-  currentHrRows: []
+  currentRows: []
 };
 
-const MAX_LINE_POINTS = 5000;
-const MAX_SCATTER_POINTS = 3000;
+const MAX_POINTS = 5000;
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
@@ -120,47 +118,35 @@ async function renderCurrentSelection() {
 
   state.currentMeta = meta;
 
-  const [accText, hrText] = await Promise.all([
-    loadText(meta.acc_file),
-    loadText(meta.hr_file)
-  ]);
+  const csvText = await loadText(meta.file);
+  const rows = parseCSV(csvText)
+    .map(normalizeRow)
+    .filter(r =>
+      Number.isFinite(r.t) &&
+      Number.isFinite(r.acc_mag) &&
+      Number.isFinite(r.heart_rate)
+    );
 
-  const accRows = parseCSV(accText).map(normalizeAccRow).filter(r =>
-    Number.isFinite(r.t) && Number.isFinite(r.acc_mag)
-  );
-
-  const hrRows = parseCSV(hrText).map(normalizeHrRow).filter(r =>
-    Number.isFinite(r.t) && Number.isFinite(r.heart_rate)
-  );
-
-  state.currentAccRows = accRows;
-  state.currentHrRows = hrRows;
+  state.currentRows = rows;
 
   clearDisplay();
 
   try {
-    renderSummary(meta, accRows, hrRows);
-    renderMetaInfo(meta, accRows, hrRows);
+    renderSummary(meta, rows);
+    renderMetaInfo(meta, rows);
   } catch (error) {
     console.error("summary/meta render error:", error);
   }
 
   try {
-    renderHRChart(hrRows);
+    renderTimeSeriesChart(rows);
   } catch (error) {
-    console.error("hrChart render error:", error);
-    document.getElementById("hrChart").innerHTML = "<p>心拍グラフの描画に失敗しました。</p>";
+    console.error("timeSeriesChart render error:", error);
+    document.getElementById("timeSeriesChart").innerHTML = "<p>時系列グラフの描画に失敗しました。</p>";
   }
 
   try {
-    renderAccChart(accRows);
-  } catch (error) {
-    console.error("accChart render error:", error);
-    document.getElementById("accChart").innerHTML = "<p>加速度グラフの描画に失敗しました。</p>";
-  }
-
-  try {
-    renderScatter(accRows, hrRows);
+    renderScatter(rows);
   } catch (error) {
     console.error("scatterChart render error:", error);
     document.getElementById("scatterChart").innerHTML = "<p>散布図の描画に失敗しました。</p>";
@@ -191,18 +177,11 @@ function parseCSV(text) {
   });
 }
 
-function normalizeAccRow(row) {
+function normalizeRow(row) {
   return {
     timestamp: row.timestamp,
     t: toMillis(row.timestamp),
-    acc_mag: Number(row.acc_mag)
-  };
-}
-
-function normalizeHrRow(row) {
-  return {
-    timestamp: row.timestamp,
-    t: toMillis(row.timestamp),
+    acc_mag: Number(row.acc_mag),
     heart_rate: Number(row.heart_rate)
   };
 }
@@ -278,54 +257,20 @@ function downsampleRows(rows, maxPoints) {
   return sampled;
 }
 
-function matchAccWithLatestHr(accRows, hrRows, maxPoints = MAX_SCATTER_POINTS) {
-  const accSampled = downsampleRows(accRows, maxPoints);
-  const result = [];
-
-  if (accSampled.length === 0 || hrRows.length === 0) return result;
-
-  let j = 0;
-  let latestHr = null;
-
-  for (const acc of accSampled) {
-    while (j < hrRows.length && hrRows[j].t <= acc.t) {
-      if (Number.isFinite(hrRows[j].heart_rate)) {
-        latestHr = hrRows[j].heart_rate;
-      }
-      j += 1;
-    }
-
-    if (Number.isFinite(acc.acc_mag) && Number.isFinite(latestHr)) {
-      result.push({
-        timestamp: acc.timestamp,
-        acc_mag: acc.acc_mag,
-        heart_rate: latestHr
-      });
-    }
-  }
-
-  return result;
-}
-
-function renderSummary(meta, accRows, hrRows) {
-  const accValues = accRows.map(r => r.acc_mag);
-  const hrValues = hrRows.map(r => r.heart_rate);
-  const matched = matchAccWithLatestHr(accRows, hrRows, 2000);
+function renderSummary(meta, rows) {
+  const accValues = rows.map(r => r.acc_mag);
+  const hrValues = rows.map(r => r.heart_rate);
 
   const accStats = basicStats(accValues);
   const hrStats = basicStats(hrValues);
-  const corr = correlation(
-    matched.map(r => r.acc_mag),
-    matched.map(r => r.heart_rate)
-  );
+  const corr = correlation(accValues, hrValues);
 
   const cards = [
     { label: "選手ID", value: meta.player_id || "-" },
     { label: "日付", value: meta.date || "-" },
-    { label: "加速度点数", value: accRows.length.toString() },
-    { label: "心拍点数", value: hrRows.length.toString() },
-    { label: "平均加速度", value: Number.isFinite(accStats.mean) ? accStats.mean.toFixed(3) : "-" },
-    { label: "最大加速度", value: Number.isFinite(accStats.max) ? accStats.max.toFixed(3) : "-" },
+    { label: "データ点数", value: rows.length.toString() },
+    { label: "平均加速度", value: Number.isFinite(accStats.mean) ? accStats.mean.toFixed(2) : "-" },
+    { label: "最大加速度", value: Number.isFinite(accStats.max) ? accStats.max.toFixed(2) : "-" },
     { label: "平均心拍", value: Number.isFinite(hrStats.mean) ? `${hrStats.mean.toFixed(1)} bpm` : "-" },
     { label: "最大心拍", value: Number.isFinite(hrStats.max) ? `${hrStats.max.toFixed(1)} bpm` : "-" },
     { label: "相関", value: Number.isFinite(corr) ? corr.toFixed(3) : "-" }
@@ -340,11 +285,9 @@ function renderSummary(meta, accRows, hrRows) {
   `).join("");
 }
 
-function renderMetaInfo(meta, accRows, hrRows) {
-  const accFirst = accRows[0]?.timestamp || "-";
-  const accLast = accRows[accRows.length - 1]?.timestamp || "-";
-  const hrFirst = hrRows[0]?.timestamp || "-";
-  const hrLast = hrRows[hrRows.length - 1]?.timestamp || "-";
+function renderMetaInfo(meta, rows) {
+  const first = rows[0]?.timestamp || "-";
+  const last = rows[rows.length - 1]?.timestamp || "-";
 
   const html = `
     <div><strong>選手ID:</strong> ${meta.player_id || "-"}</div>
@@ -352,67 +295,59 @@ function renderMetaInfo(meta, accRows, hrRows) {
     <div><strong>日付:</strong> ${meta.date || "-"}</div>
     <div><strong>時間帯:</strong> ${meta.start_time || "-"} - ${meta.end_time || "-"}</div>
     <div><strong>セッション種別:</strong> ${meta.session_type || "-"}</div>
-    <div><strong>加速度CSV:</strong> <code>${meta.acc_file || "-"}</code></div>
-    <div><strong>心拍CSV:</strong> <code>${meta.hr_file || "-"}</code></div>
-    <div><strong>加速度先頭時刻:</strong> ${accFirst}</div>
-    <div><strong>加速度末尾時刻:</strong> ${accLast}</div>
-    <div><strong>心拍先頭時刻:</strong> ${hrFirst}</div>
-    <div><strong>心拍末尾時刻:</strong> ${hrLast}</div>
+    <div><strong>CSV:</strong> <code>${meta.file || "-"}</code></div>
+    <div><strong>先頭時刻:</strong> ${first}</div>
+    <div><strong>末尾時刻:</strong> ${last}</div>
   `;
 
   document.getElementById("metaInfo").innerHTML = html;
 }
 
-function renderHRChart(hrRows) {
-  const sampled = downsampleRows(hrRows, MAX_LINE_POINTS);
+function renderTimeSeriesChart(rows) {
+  const sampled = downsampleRows(rows, MAX_POINTS);
+
   const x = sampled.map(r => r.timestamp);
+  const acc = sampled.map(r => r.acc_mag);
+  const hr = sampled.map(r => r.heart_rate);
+
+  Plotly.newPlot("timeSeriesChart", [
+    {
+      x,
+      y: acc,
+      type: "scattergl",
+      mode: "lines",
+      name: "Acceleration Magnitude",
+      yaxis: "y1"
+    },
+    {
+      x,
+      y: hr,
+      type: "scattergl",
+      mode: "lines",
+      name: "Heart Rate",
+      yaxis: "y2"
+    }
+  ], {
+    margin: { t: 20 },
+    xaxis: { title: "Time" },
+    yaxis: { title: "Acceleration Magnitude", side: "left" },
+    yaxis2: {
+      title: "Heart Rate (bpm)",
+      overlaying: "y",
+      side: "right"
+    },
+    legend: { orientation: "h" }
+  }, {
+    responsive: true
+  });
+}
+
+function renderScatter(rows) {
+  const sampled = downsampleRows(rows, MAX_POINTS);
+
+  const x = sampled.map(r => r.acc_mag);
   const y = sampled.map(r => r.heart_rate);
-
-  Plotly.newPlot("hrChart", [
-    {
-      x,
-      y,
-      type: "scattergl",
-      mode: "lines",
-      name: "Heart Rate"
-    }
-  ], {
-    margin: { t: 20 },
-    xaxis: { title: "Time" },
-    yaxis: { title: "Heart Rate (bpm)" }
-  }, {
-    responsive: true
-  });
-}
-
-function renderAccChart(accRows) {
-  const sampled = downsampleRows(accRows, MAX_LINE_POINTS);
-  const x = sampled.map(r => r.timestamp);
-  const y = sampled.map(r => r.acc_mag);
-
-  Plotly.newPlot("accChart", [
-    {
-      x,
-      y,
-      type: "scattergl",
-      mode: "lines",
-      name: "Acceleration Magnitude"
-    }
-  ], {
-    margin: { t: 20 },
-    xaxis: { title: "Time" },
-    yaxis: { title: "Acceleration Magnitude" }
-  }, {
-    responsive: true
-  });
-}
-
-function renderScatter(accRows, hrRows) {
-  const matched = matchAccWithLatestHr(accRows, hrRows, MAX_SCATTER_POINTS);
-
-  const x = matched.map(r => r.acc_mag);
-  const y = matched.map(r => r.heart_rate);
-  const text = matched.map(r => r.timestamp);
+  const text = sampled.map(r => r.timestamp);
 
   Plotly.newPlot("scatterChart", [
     {
@@ -436,7 +371,7 @@ function clearDisplay() {
   document.getElementById("summaryCards").innerHTML = "";
   document.getElementById("metaInfo").innerHTML = "";
 
-  ["hrChart", "accChart", "scatterChart"].forEach(id => {
+  ["timeSeriesChart", "scatterChart"].forEach(id => {
     const el = document.getElementById(id);
     if (el) {
       try {
