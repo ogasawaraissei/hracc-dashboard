@@ -1,7 +1,8 @@
 const state = {
   manifest: [],
   currentMeta: null,
-  currentRows: []
+  currentAccRows: [],
+  currentHrRows: []
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -80,10 +81,7 @@ function populateSessionSelect() {
   );
 
   select.innerHTML = sessions
-    .map((item, index) => {
-      const label = getSessionLabel(item);
-      return `<option value="${index}">${label}</option>`;
-    })
+    .map((item, index) => `<option value="${index}">${getSessionLabel(item)}</option>`)
     .join("");
 }
 
@@ -119,16 +117,22 @@ async function renderCurrentSelection() {
 
   state.currentMeta = meta;
 
-  const csvText = await loadText(meta.file);
-  const rows = parseCSV(csvText).map(normalizeRow);
+  const [accText, hrText] = await Promise.all([
+    loadText(meta.acc_file),
+    loadText(meta.hr_file)
+  ]);
 
-  state.currentRows = rows;
+  const accRows = parseCSV(accText).map(normalizeAccRow);
+  const hrRows = parseCSV(hrText).map(normalizeHrRow);
 
-  renderSummary(meta, rows);
-  renderMetaInfo(meta, rows);
-  renderHRChart(rows);
-  renderAccChart(rows);
-  renderScatter(rows);
+  state.currentAccRows = accRows;
+  state.currentHrRows = hrRows;
+
+  renderSummary(meta, accRows, hrRows);
+  renderMetaInfo(meta, accRows, hrRows);
+  renderHRChart(hrRows);
+  renderAccChart(accRows);
+  renderScatter(accRows, hrRows);
 }
 
 async function loadText(path) {
@@ -155,23 +159,25 @@ function parseCSV(text) {
   });
 }
 
-function normalizeRow(row) {
-  const accX = Number(row.acc_x);
-  const accY = Number(row.acc_y);
-  const accZ = Number(row.acc_z);
-  const heartRate = Number(row.heart_rate);
-
+function normalizeAccRow(row) {
   return {
     timestamp: row.timestamp,
-    player_id: row.player_id,
-    player_name: row.player_name,
-    date: row.date,
-    acc_x: accX,
-    acc_y: accY,
-    acc_z: accZ,
-    heart_rate: heartRate,
-    acc_mag: Math.sqrt(accX ** 2 + accY ** 2 + accZ ** 2)
+    t: toMillis(row.timestamp),
+    acc_mag: Number(row.acc_mag)
   };
+}
+
+function normalizeHrRow(row) {
+  return {
+    timestamp: row.timestamp,
+    t: toMillis(row.timestamp),
+    heart_rate: Number(row.heart_rate)
+  };
+}
+
+function toMillis(timestamp) {
+  const t = new Date(timestamp).getTime();
+  return Number.isFinite(t) ? t : NaN;
 }
 
 function basicStats(values) {
@@ -217,22 +223,54 @@ function correlation(x, y) {
   return numerator / Math.sqrt(denomX * denomY);
 }
 
-function renderSummary(meta, rows) {
-  const heartRates = rows.map(r => r.heart_rate);
-  const accMags = rows.map(r => r.acc_mag);
+function matchAccWithLatestHr(accRows, hrRows) {
+  const result = [];
+  if (accRows.length === 0 || hrRows.length === 0) return result;
 
-  const hrStats = basicStats(heartRates);
-  const accStats = basicStats(accMags);
-  const corr = correlation(accMags, heartRates);
+  let j = 0;
+  let latestHr = null;
+
+  for (const acc of accRows) {
+    while (j < hrRows.length && hrRows[j].t <= acc.t) {
+      if (Number.isFinite(hrRows[j].heart_rate)) {
+        latestHr = hrRows[j].heart_rate;
+      }
+      j += 1;
+    }
+
+    if (Number.isFinite(acc.acc_mag) && Number.isFinite(latestHr)) {
+      result.push({
+        timestamp: acc.timestamp,
+        acc_mag: acc.acc_mag,
+        heart_rate: latestHr
+      });
+    }
+  }
+
+  return result;
+}
+
+function renderSummary(meta, accRows, hrRows) {
+  const accValues = accRows.map(r => r.acc_mag);
+  const hrValues = hrRows.map(r => r.heart_rate);
+  const matched = matchAccWithLatestHr(accRows, hrRows);
+
+  const accStats = basicStats(accValues);
+  const hrStats = basicStats(hrValues);
+  const corr = correlation(
+    matched.map(r => r.acc_mag),
+    matched.map(r => r.heart_rate)
+  );
 
   const cards = [
-    { label: "選手ID", value: meta.player_id },
-    { label: "日付", value: meta.date },
-    { label: "データ点数", value: rows.length.toString() },
-    { label: "平均心拍", value: Number.isFinite(hrStats.mean) ? `${hrStats.mean.toFixed(1)} bpm` : "-" },
-    { label: "最大心拍", value: Number.isFinite(hrStats.max) ? `${hrStats.max.toFixed(1)} bpm` : "-" },
+    { label: "選手ID", value: meta.player_id || "-" },
+    { label: "日付", value: meta.date || "-" },
+    { label: "加速度点数", value: accRows.length.toString() },
+    { label: "心拍点数", value: hrRows.length.toString() },
     { label: "平均加速度", value: Number.isFinite(accStats.mean) ? accStats.mean.toFixed(3) : "-" },
     { label: "最大加速度", value: Number.isFinite(accStats.max) ? accStats.max.toFixed(3) : "-" },
+    { label: "平均心拍", value: Number.isFinite(hrStats.mean) ? `${hrStats.mean.toFixed(1)} bpm` : "-" },
+    { label: "最大心拍", value: Number.isFinite(hrStats.max) ? `${hrStats.max.toFixed(1)} bpm` : "-" },
     { label: "相関", value: Number.isFinite(corr) ? corr.toFixed(3) : "-" }
   ];
 
@@ -245,27 +283,32 @@ function renderSummary(meta, rows) {
   `).join("");
 }
 
-function renderMetaInfo(meta, rows) {
-  const first = rows[0]?.timestamp || "-";
-  const last = rows[rows.length - 1]?.timestamp || "-";
+function renderMetaInfo(meta, accRows, hrRows) {
+  const accFirst = accRows[0]?.timestamp || "-";
+  const accLast = accRows[accRows.length - 1]?.timestamp || "-";
+  const hrFirst = hrRows[0]?.timestamp || "-";
+  const hrLast = hrRows[hrRows.length - 1]?.timestamp || "-";
 
   const html = `
-    <div><strong>CSV:</strong> <code>${meta.file}</code></div>
-    <div><strong>選手ID:</strong> ${meta.player_id}</div>
-    <div><strong>選手名:</strong> ${meta.player_name || `Player${meta.player_id}`}</div>
-    <div><strong>日付:</strong> ${meta.date}</div>
+    <div><strong>選手ID:</strong> ${meta.player_id || "-"}</div>
+    <div><strong>選手名:</strong> ${meta.player_name || "-"}</div>
+    <div><strong>日付:</strong> ${meta.date || "-"}</div>
     <div><strong>時間帯:</strong> ${meta.start_time || "-"} - ${meta.end_time || "-"}</div>
     <div><strong>セッション種別:</strong> ${meta.session_type || "-"}</div>
-    <div><strong>先頭時刻:</strong> ${first}</div>
-    <div><strong>末尾時刻:</strong> ${last}</div>
+    <div><strong>加速度CSV:</strong> <code>${meta.acc_file || "-"}</code></div>
+    <div><strong>心拍CSV:</strong> <code>${meta.hr_file || "-"}</code></div>
+    <div><strong>加速度先頭時刻:</strong> ${accFirst}</div>
+    <div><strong>加速度末尾時刻:</strong> ${accLast}</div>
+    <div><strong>心拍先頭時刻:</strong> ${hrFirst}</div>
+    <div><strong>心拍末尾時刻:</strong> ${hrLast}</div>
   `;
 
   document.getElementById("metaInfo").innerHTML = html;
 }
 
-function renderHRChart(rows) {
-  const x = rows.map(r => r.timestamp);
-  const y = rows.map(r => r.heart_rate);
+function renderHRChart(hrRows) {
+  const x = hrRows.map(r => r.timestamp);
+  const y = hrRows.map(r => r.heart_rate);
 
   Plotly.newPlot("hrChart", [
     {
@@ -284,9 +327,9 @@ function renderHRChart(rows) {
   });
 }
 
-function renderAccChart(rows) {
-  const x = rows.map(r => r.timestamp);
-  const y = rows.map(r => r.acc_mag);
+function renderAccChart(accRows) {
+  const x = accRows.map(r => r.timestamp);
+  const y = accRows.map(r => r.acc_mag);
 
   Plotly.newPlot("accChart", [
     {
@@ -305,10 +348,12 @@ function renderAccChart(rows) {
   });
 }
 
-function renderScatter(rows) {
-  const x = rows.map(r => r.acc_mag);
-  const y = rows.map(r => r.heart_rate);
-  const text = rows.map(r => `${r.timestamp}<br>${r.player_id}`);
+function renderScatter(accRows, hrRows) {
+  const matched = matchAccWithLatestHr(accRows, hrRows);
+
+  const x = matched.map(r => r.acc_mag);
+  const y = matched.map(r => r.heart_rate);
+  const text = matched.map(r => r.timestamp);
 
   Plotly.newPlot("scatterChart", [
     {
