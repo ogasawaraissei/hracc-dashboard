@@ -181,16 +181,27 @@ function toMillis(timestamp) {
 }
 
 function basicStats(values) {
-  const valid = values.filter(v => Number.isFinite(v));
-  if (valid.length === 0) {
+  let count = 0;
+  let sum = 0;
+  let min = Infinity;
+  let max = -Infinity;
+
+  for (const v of values) {
+    if (!Number.isFinite(v)) continue;
+    count += 1;
+    sum += v;
+    if (v < min) min = v;
+    if (v > max) max = v;
+  }
+
+  if (count === 0) {
     return { mean: NaN, min: NaN, max: NaN };
   }
 
-  const sum = valid.reduce((a, b) => a + b, 0);
   return {
-    mean: sum / valid.length,
-    min: Math.min(...valid),
-    max: Math.max(...valid)
+    mean: sum / count,
+    min,
+    max
   };
 }
 
