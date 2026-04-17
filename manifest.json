@@ -3,7 +3,7 @@
     "player_id": "001",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p001_2025-10-17_1306_1457.csv"
@@ -12,88 +12,16 @@
     "player_id": "001",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p001_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "001",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p001_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "001",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p001_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "001",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p001_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "001",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p001_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "001",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p001_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "001",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p001_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "001",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p001_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "001",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p001_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "002",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1302",
     "end_time": "1501",
     "file": "data/20251003/p002_2025-10-03_1302_1501.csv"
@@ -102,7 +30,7 @@
     "player_id": "002",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p002_2025-10-17_1306_1457.csv"
@@ -111,88 +39,16 @@
     "player_id": "002",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p002_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "002",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p002_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "002",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p002_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "002",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p002_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "002",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p002_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "002",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p002_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "002",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p002_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "002",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p002_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "002",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p002_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "003",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p003_2025-10-03_1345_1501.csv"
@@ -201,7 +57,7 @@
     "player_id": "003",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p003_2025-10-17_1306_1457.csv"
@@ -210,88 +66,16 @@
     "player_id": "003",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p003_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "003",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p003_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "003",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p003_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "003",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p003_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "003",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p003_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "003",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p003_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "003",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p003_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "003",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p003_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "003",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p003_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "004",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p004_2025-10-03_1345_1501.csv"
@@ -300,7 +84,7 @@
     "player_id": "004",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p004_2025-10-17_1306_1457.csv"
@@ -309,88 +93,16 @@
     "player_id": "004",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p004_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "004",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p004_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "004",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p004_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "004",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p004_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "004",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p004_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "004",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p004_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "004",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p004_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "004",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p004_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "004",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p004_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "005",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p005_2025-10-03_1345_1501.csv"
@@ -399,7 +111,7 @@
     "player_id": "005",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p005_2025-10-17_1306_1457.csv"
@@ -408,88 +120,16 @@
     "player_id": "005",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p005_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "005",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p005_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "005",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p005_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "005",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p005_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "005",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p005_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "005",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p005_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "005",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p005_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "005",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p005_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "005",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p005_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "006",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p006_2025-10-03_1345_1501.csv"
@@ -498,7 +138,7 @@
     "player_id": "006",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p006_2025-10-17_1306_1457.csv"
@@ -507,88 +147,16 @@
     "player_id": "006",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p006_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "006",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p006_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "006",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p006_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "006",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p006_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "006",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p006_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "006",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p006_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "006",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p006_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "006",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p006_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "006",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p006_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "007",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1302",
     "end_time": "1501",
     "file": "data/20251003/p007_2025-10-03_1302_1501.csv"
@@ -597,7 +165,7 @@
     "player_id": "007",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p007_2025-10-17_1306_1457.csv"
@@ -606,88 +174,16 @@
     "player_id": "007",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p007_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "007",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p007_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "007",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p007_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "007",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p007_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "007",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p007_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "007",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p007_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "007",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p007_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "007",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p007_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "007",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p007_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "008",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p008_2025-10-03_1345_1501.csv"
@@ -696,7 +192,7 @@
     "player_id": "008",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p008_2025-10-17_1306_1457.csv"
@@ -705,88 +201,16 @@
     "player_id": "008",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p008_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "008",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p008_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "008",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p008_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "008",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p008_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "008",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p008_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "008",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p008_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "008",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p008_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "008",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p008_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "008",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p008_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "009",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p009_2025-10-03_1345_1501.csv"
@@ -795,7 +219,7 @@
     "player_id": "009",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p009_2025-10-17_1306_1457.csv"
@@ -804,88 +228,16 @@
     "player_id": "009",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p009_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "009",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p009_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "009",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p009_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "009",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p009_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "009",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p009_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "009",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p009_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "009",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p009_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "009",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p009_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "009",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p009_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "010",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p010_2025-10-03_1345_1501.csv"
@@ -894,7 +246,7 @@
     "player_id": "010",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p010_2025-10-17_1306_1457.csv"
@@ -903,88 +255,16 @@
     "player_id": "010",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p010_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "010",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p010_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "010",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p010_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "010",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p010_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "010",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p010_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "010",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p010_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "010",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p010_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "010",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p010_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "010",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p010_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "011",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p011_2025-10-03_1345_1501.csv"
@@ -993,7 +273,7 @@
     "player_id": "011",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p011_2025-10-17_1306_1457.csv"
@@ -1002,88 +282,16 @@
     "player_id": "011",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p011_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "011",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p011_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "011",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p011_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "011",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p011_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "011",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p011_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "011",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p011_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "011",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p011_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "011",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p011_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "011",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p011_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "012",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1346",
     "end_time": "1501",
     "file": "data/20251003/p012_2025-10-03_1346_1501.csv"
@@ -1092,7 +300,7 @@
     "player_id": "012",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p012_2025-10-17_1306_1457.csv"
@@ -1101,88 +309,16 @@
     "player_id": "012",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p012_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "012",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p012_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "012",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p012_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "012",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p012_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "012",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p012_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "012",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p012_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "012",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p012_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "012",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p012_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "012",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p012_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "013",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p013_2025-10-03_1345_1501.csv"
@@ -1191,7 +327,7 @@
     "player_id": "013",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p013_2025-10-17_1306_1457.csv"
@@ -1200,88 +336,16 @@
     "player_id": "013",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p013_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "013",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p013_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "013",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p013_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "013",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p013_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "013",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p013_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "013",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p013_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "013",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p013_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "013",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p013_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "013",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p013_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "014",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1346",
     "end_time": "1501",
     "file": "data/20251003/p014_2025-10-03_1346_1501.csv"
@@ -1290,7 +354,7 @@
     "player_id": "014",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p014_2025-10-17_1306_1457.csv"
@@ -1299,88 +363,16 @@
     "player_id": "014",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p014_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "014",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p014_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "014",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p014_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "014",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p014_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "014",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p014_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "014",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p014_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "014",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p014_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "014",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p014_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "014",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p014_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "015",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p015_2025-10-03_1345_1501.csv"
@@ -1389,7 +381,7 @@
     "player_id": "015",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p015_2025-10-17_1306_1457.csv"
@@ -1398,88 +390,16 @@
     "player_id": "015",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p015_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "015",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p015_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "015",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p015_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "015",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p015_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "015",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p015_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "015",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p015_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "015",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p015_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "015",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p015_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "015",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p015_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "016",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p016_2025-10-03_1345_1501.csv"
@@ -1488,7 +408,7 @@
     "player_id": "016",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p016_2025-10-17_1306_1457.csv"
@@ -1497,88 +417,16 @@
     "player_id": "016",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p016_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "016",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p016_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "016",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p016_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "016",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p016_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "016",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p016_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "016",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p016_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "016",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p016_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "016",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p016_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "016",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p016_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "017a",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p017a_2025-10-03_1345_1501.csv"
@@ -1587,7 +435,7 @@
     "player_id": "017a",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p017a_2025-10-17_1306_1457.csv"
@@ -1596,88 +444,16 @@
     "player_id": "017a",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p017a_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "017a",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p017a_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "017a",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p017a_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "017a",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p017a_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "017a",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p017a_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "017a",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p017a_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "017a",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p017a_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "017a",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p017a_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "017a",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p017a_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "018",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p018_2025-10-03_1345_1501.csv"
@@ -1686,7 +462,7 @@
     "player_id": "018",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p018_2025-10-17_1306_1457.csv"
@@ -1695,88 +471,16 @@
     "player_id": "018",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p018_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "018",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p018_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "018",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p018_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "018",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p018_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "018",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p018_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "018",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p018_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "018",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p018_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "018",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p018_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "018",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p018_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "019",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p019_2025-10-03_1345_1501.csv"
@@ -1785,7 +489,7 @@
     "player_id": "019",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p019_2025-10-17_1306_1457.csv"
@@ -1794,88 +498,16 @@
     "player_id": "019",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p019_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "019",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p019_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "019",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p019_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "019",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p019_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "019",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p019_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "019",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p019_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "019",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p019_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "019",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p019_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "019",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p019_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "020",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p020_2025-10-03_1345_1501.csv"
@@ -1884,7 +516,7 @@
     "player_id": "020",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p020_2025-10-17_1306_1457.csv"
@@ -1893,61 +525,16 @@
     "player_id": "020",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p020_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "020",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p020_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "020",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p020_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "020",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p020_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "020",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p020_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "020",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p020_2025-12-19_1310_1502.csv"
-  },
-  {
     "player_id": "021",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p021_2025-10-03_1345_1501.csv"
@@ -1956,7 +543,7 @@
     "player_id": "021",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p021_2025-10-17_1306_1457.csv"
@@ -1965,88 +552,16 @@
     "player_id": "021",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p021_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "021",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p021_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "021",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p021_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "021",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p021_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "021",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p021_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "021",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p021_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "021",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p021_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "021",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p021_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "021",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p021_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "022",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p022_2025-10-03_1345_1501.csv"
@@ -2055,7 +570,7 @@
     "player_id": "022",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p022_2025-10-17_1306_1457.csv"
@@ -2064,88 +579,16 @@
     "player_id": "022",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p022_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "022",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p022_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "022",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p022_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "022",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p022_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "022",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p022_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "022",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p022_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "022",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p022_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "022",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p022_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "022",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p022_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "023",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p023_2025-10-03_1345_1501.csv"
@@ -2154,7 +597,7 @@
     "player_id": "023",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p023_2025-10-17_1306_1457.csv"
@@ -2163,88 +606,16 @@
     "player_id": "023",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p023_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "023",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p023_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "023",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p023_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "023",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p023_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "023",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p023_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "023",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p023_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "023",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p023_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "023",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p023_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "023",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p023_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "024",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p024_2025-10-03_1345_1501.csv"
@@ -2253,7 +624,7 @@
     "player_id": "024",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p024_2025-10-17_1306_1457.csv"
@@ -2262,88 +633,16 @@
     "player_id": "024",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p024_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "024",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p024_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "024",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p024_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "024",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p024_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "024",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p024_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "024",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p024_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "024",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p024_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "024",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p024_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "024",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p024_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "025",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p025_2025-10-03_1345_1501.csv"
@@ -2352,7 +651,7 @@
     "player_id": "025",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p025_2025-10-17_1306_1457.csv"
@@ -2361,88 +660,16 @@
     "player_id": "025",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p025_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "025",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p025_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "025",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p025_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "025",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p025_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "025",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p025_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "025",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p025_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "025",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p025_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "025",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p025_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "025",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p025_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "026",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1346",
     "end_time": "1501",
     "file": "data/20251003/p026_2025-10-03_1346_1501.csv"
@@ -2451,7 +678,7 @@
     "player_id": "026",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p026_2025-10-17_1306_1457.csv"
@@ -2460,88 +687,16 @@
     "player_id": "026",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p026_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "026",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p026_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "026",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p026_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "026",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p026_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "026",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p026_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "026",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p026_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "026",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p026_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "026",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p026_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "026",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p026_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "027",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p027_2025-10-03_1345_1501.csv"
@@ -2550,7 +705,7 @@
     "player_id": "027",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p027_2025-10-17_1306_1457.csv"
@@ -2559,88 +714,16 @@
     "player_id": "027",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p027_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "027",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p027_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "027",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p027_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "027",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p027_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "027",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p027_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "027",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p027_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "027",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p027_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "027",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p027_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "027",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p027_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "028",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p028_2025-10-03_1345_1501.csv"
@@ -2649,7 +732,7 @@
     "player_id": "028",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p028_2025-10-17_1306_1457.csv"
@@ -2658,88 +741,16 @@
     "player_id": "028",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p028_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "028",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p028_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "028",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p028_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "028",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p028_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "028",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p028_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "028",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p028_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "028",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p028_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "028",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p028_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "028",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p028_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "029",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p029_2025-10-03_1345_1501.csv"
@@ -2748,7 +759,7 @@
     "player_id": "029",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p029_2025-10-17_1306_1457.csv"
@@ -2757,88 +768,16 @@
     "player_id": "029",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p029_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "029",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p029_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "029",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p029_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "029",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p029_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "029",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p029_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "029",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p029_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "029",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p029_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "029",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p029_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "029",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p029_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "030",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p030_2025-10-03_1345_1501.csv"
@@ -2847,7 +786,7 @@
     "player_id": "030",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p030_2025-10-17_1306_1457.csv"
@@ -2856,88 +795,16 @@
     "player_id": "030",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p030_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "030",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p030_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "030",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p030_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "030",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p030_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "030",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p030_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "030",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p030_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "030",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p030_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "030",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p030_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "030",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p030_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "031",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1346",
     "end_time": "1501",
     "file": "data/20251003/p031_2025-10-03_1346_1501.csv"
@@ -2946,7 +813,7 @@
     "player_id": "031",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p031_2025-10-17_1306_1457.csv"
@@ -2955,88 +822,16 @@
     "player_id": "031",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p031_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "031",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p031_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "031",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p031_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "031",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p031_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "031",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p031_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "031",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p031_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "031",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p031_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "031",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p031_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "031",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p031_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "032",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p032_2025-10-03_1345_1501.csv"
@@ -3045,7 +840,7 @@
     "player_id": "032",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p032_2025-10-17_1306_1457.csv"
@@ -3054,88 +849,16 @@
     "player_id": "032",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p032_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "032",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p032_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "032",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p032_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "032",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p032_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "032",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p032_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "032",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p032_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "032",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p032_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "032",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p032_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "032",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p032_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "033",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p033_2025-10-03_1345_1501.csv"
@@ -3144,7 +867,7 @@
     "player_id": "033",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p033_2025-10-17_1306_1457.csv"
@@ -3153,88 +876,16 @@
     "player_id": "033",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p033_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "033",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p033_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "033",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p033_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "033",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p033_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "033",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p033_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "033",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p033_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "033",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p033_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "033",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p033_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "033",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p033_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "034",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p034_2025-10-03_1345_1501.csv"
@@ -3243,7 +894,7 @@
     "player_id": "034",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p034_2025-10-17_1306_1457.csv"
@@ -3252,88 +903,16 @@
     "player_id": "034",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p034_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "034",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p034_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "034",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p034_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "034",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p034_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "034",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p034_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "034",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p034_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "034",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p034_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "034",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p034_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "034",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p034_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "035",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p035_2025-10-03_1345_1501.csv"
@@ -3342,7 +921,7 @@
     "player_id": "035",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p035_2025-10-17_1306_1457.csv"
@@ -3351,88 +930,16 @@
     "player_id": "035",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p035_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "035",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p035_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "035",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p035_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "035",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p035_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "035",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p035_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "035",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p035_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "035",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p035_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "035",
-    "player_name": "",
-    "date": "2026-01-23",
-    "session_type": "20260123",
-    "start_time": "1313",
-    "end_time": "1500",
-    "file": "data/20260123/p035_2026-01-23_1313_1500.csv"
-  },
-  {
-    "player_id": "035",
-    "player_name": "",
-    "date": "2026-01-30",
-    "session_type": "20260130",
-    "start_time": "1312",
-    "end_time": "2034",
-    "file": "data/20260130/p035_2026-01-30_1312_2034.csv"
-  },
-  {
     "player_id": "036",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p036_2025-10-03_1345_1501.csv"
@@ -3441,7 +948,7 @@
     "player_id": "036",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p036_2025-10-17_1306_1457.csv"
@@ -3450,70 +957,16 @@
     "player_id": "036",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p036_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "036",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p036_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "036",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p036_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "036",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p036_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "036",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p036_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "036",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p036_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "036",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p036_2026-01-09_1312_0109.csv"
-  },
-  {
     "player_id": "037",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1346",
     "end_time": "1501",
     "file": "data/20251003/p037_2025-10-03_1346_1501.csv"
@@ -3522,7 +975,7 @@
     "player_id": "037",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p037_2025-10-17_1306_1457.csv"
@@ -3531,70 +984,16 @@
     "player_id": "037",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p037_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "037",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p037_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "037",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p037_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "037",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p037_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "037",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p037_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "037",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p037_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "037",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p037_2026-01-09_1312_0109.csv"
-  },
-  {
     "player_id": "038",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1346",
     "end_time": "1501",
     "file": "data/20251003/p038_2025-10-03_1346_1501.csv"
@@ -3603,7 +1002,7 @@
     "player_id": "038",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p038_2025-10-17_1306_1457.csv"
@@ -3612,70 +1011,16 @@
     "player_id": "038",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p038_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "038",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p038_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "038",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p038_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "038",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p038_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "038",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p038_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "038",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p038_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "038",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p038_2026-01-09_1312_0109.csv"
-  },
-  {
     "player_id": "039",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p039_2025-10-03_1345_1501.csv"
@@ -3684,7 +1029,7 @@
     "player_id": "039",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p039_2025-10-17_1306_1457.csv"
@@ -3693,70 +1038,16 @@
     "player_id": "039",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p039_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "039",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p039_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "039",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p039_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "039",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p039_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "039",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p039_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "039",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p039_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "039",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p039_2026-01-09_1312_0109.csv"
-  },
-  {
     "player_id": "040",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1345",
     "end_time": "1501",
     "file": "data/20251003/p040_2025-10-03_1345_1501.csv"
@@ -3765,7 +1056,7 @@
     "player_id": "040",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p040_2025-10-17_1306_1457.csv"
@@ -3774,79 +1065,16 @@
     "player_id": "040",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p040_2025-10-24_1308_1456.csv"
   },
   {
-    "player_id": "040",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p040_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "040",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p040_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "040",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p040_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "040",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p040_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "040",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p040_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "040",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p040_2026-01-09_1312_0109.csv"
-  },
-  {
-    "player_id": "041",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p041_2026-01-09_1312_0109.csv"
-  },
-  {
     "player_id": "041a",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1344",
     "end_time": "1501",
     "file": "data/20251003/p041a_2025-10-03_1344_1501.csv"
@@ -3855,43 +1083,16 @@
     "player_id": "041a",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p041a_2025-10-17_1306_1457.csv"
   },
   {
-    "player_id": "041a",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p041a_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "041a",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p041a_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "041a",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p041a_2025-12-05_1305_1500.csv"
-  },
-  {
     "player_id": "042",
     "player_name": "",
     "date": "2025-10-03",
-    "session_type": "20251003",
+    "session_type": "default",
     "start_time": "1346",
     "end_time": "1501",
     "file": "data/20251003/p042_2025-10-03_1346_1501.csv"
@@ -3900,7 +1101,7 @@
     "player_id": "042",
     "player_name": "",
     "date": "2025-10-17",
-    "session_type": "20251017",
+    "session_type": "default",
     "start_time": "1306",
     "end_time": "1457",
     "file": "data/20251017/p042_2025-10-17_1306_1457.csv"
@@ -3909,63 +1110,9 @@
     "player_id": "042",
     "player_name": "",
     "date": "2025-10-24",
-    "session_type": "20251024",
+    "session_type": "default",
     "start_time": "1308",
     "end_time": "1456",
     "file": "data/20251024/p042_2025-10-24_1308_1456.csv"
-  },
-  {
-    "player_id": "042",
-    "player_name": "",
-    "date": "2025-11-14",
-    "session_type": "20251114",
-    "start_time": "1308",
-    "end_time": "1500",
-    "file": "data/20251114/p042_2025-11-14_1308_1500.csv"
-  },
-  {
-    "player_id": "042",
-    "player_name": "",
-    "date": "2025-11-21",
-    "session_type": "20251121",
-    "start_time": "1309",
-    "end_time": "1501",
-    "file": "data/20251121/p042_2025-11-21_1309_1501.csv"
-  },
-  {
-    "player_id": "042",
-    "player_name": "",
-    "date": "2025-11-28",
-    "session_type": "20251128",
-    "start_time": "1311",
-    "end_time": "1502",
-    "file": "data/20251128/p042_2025-11-28_1311_1502.csv"
-  },
-  {
-    "player_id": "042",
-    "player_name": "",
-    "date": "2025-12-05",
-    "session_type": "20251205",
-    "start_time": "1305",
-    "end_time": "1500",
-    "file": "data/20251205/p042_2025-12-05_1305_1500.csv"
-  },
-  {
-    "player_id": "042",
-    "player_name": "",
-    "date": "2025-12-19",
-    "session_type": "20251219",
-    "start_time": "1310",
-    "end_time": "1502",
-    "file": "data/20251219/p042_2025-12-19_1310_1502.csv"
-  },
-  {
-    "player_id": "042",
-    "player_name": "",
-    "date": "2026-01-09",
-    "session_type": "20260109",
-    "start_time": "1312",
-    "end_time": "0109",
-    "file": "data/20260109/p042_2026-01-09_1312_0109.csv"
   }
 ]

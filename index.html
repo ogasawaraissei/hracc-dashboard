@@ -4,55 +4,334 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sports Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .page-nav button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .page-nav button.active {
+      background: #111827;
+      color: white;
+    }
+
+    .page-section {
+      display: none;
+    }
+
+    .page-section.active {
+      display: block;
+    }
+
+    .control-row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: end;
+      margin-bottom: 16px;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 180px;
+    }
+
+    .control-group input,
+    .control-group select,
+    .control-group button {
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+
+    .summary-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+    }
+
+    .summary-card {
+      background: #f9fafb;
+      border: 1px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 14px;
+    }
+
+    .summary-card .label {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    .summary-card .value {
+      font-size: 24px;
+      font-weight: 700;
+      margin-top: 6px;
+    }
+
+    .chart {
+      width: 100%;
+      height: 420px;
+    }
+
+    .chart-small {
+      width: 100%;
+      height: 260px;
+    }
+
+    .chart-row-2 {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+    }
+
+    .chart-row-2-equal {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .team-player-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .team-player-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 16px;
+      background: #ffffff;
+    }
+
+    .team-player-card h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .team-player-card .mini-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .mini-metric {
+      background: #f9fafb;
+      border-radius: 8px;
+      padding: 10px;
+      border: 1px solid #e5e7eb;
+    }
+
+    .mini-metric .label {
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    .mini-metric .value {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 4px;
+    }
+
+    .meta-info {
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    .meta-info code {
+      background: #f3f4f6;
+      padding: 2px 6px;
+      border-radius: 6px;
+    }
+
+    @media (max-width: 1100px) {
+      .team-player-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 768px) {
+      .chart-row-2,
+      .chart-row-2-equal,
+      .team-player-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <h1>Sports Dashboard</h1>
-    <p>1Hz 加速度合成値・心拍データ可視化</p>
+    <p>個人・履歴・チームサマリー・比較</p>
   </header>
 
   <main class="container">
-    <section class="panel controls">
-      <div class="control-group">
-        <label for="playerSelect">選手</label>
-        <select id="playerSelect"></select>
-      </div>
-
-      <div class="control-group">
-        <label for="dateSelect">日付</label>
-        <select id="dateSelect"></select>
-      </div>
-
-      <div class="control-group">
-        <label for="sessionSelect">セッション</label>
-        <select id="sessionSelect"></select>
-      </div>
-
-      <div class="control-group">
-        <button id="reloadBtn">更新</button>
-      </div>
-    </section>
-
-    <section class="panel summary">
-      <h2>サマリー</h2>
-      <div id="summaryCards" class="summary-cards"></div>
-    </section>
-
     <section class="panel">
-      <h2>時系列（加速度・心拍）</h2>
-      <div id="timeSeriesChart" class="chart"></div>
+      <div class="page-nav">
+        <button class="nav-btn active" data-page="personalPage">個人ページ</button>
+        <button class="nav-btn" data-page="historyPage">個人履歴ページ</button>
+        <button class="nav-btn" data-page="teamSummaryPage">チームサマリーページ</button>
+        <button class="nav-btn" data-page="comparePage">比較ページ</button>
+      </div>
     </section>
 
-    <section class="panel">
-      <h2>心拍 vs 加速度合成値</h2>
-      <div id="scatterChart" class="chart"></div>
+    <section id="personalPage" class="page-section active">
+      <section class="panel">
+        <div class="control-row">
+          <div class="control-group">
+            <label for="personalPlayerSelect">選手</label>
+            <select id="personalPlayerSelect"></select>
+          </div>
+          <div class="control-group">
+            <label for="personalDateSelect">日付</label>
+            <select id="personalDateSelect"></select>
+          </div>
+          <div class="control-group">
+            <label for="personalSessionSelect">セッション</label>
+            <select id="personalSessionSelect"></select>
+          </div>
+          <div class="control-group">
+            <label for="personalHrMaxInput">最大心拍数 (bpm)</label>
+            <input id="personalHrMaxInput" type="number" value="200" min="1" step="1" />
+          </div>
+          <div class="control-group">
+            <button id="personalReloadBtn">更新</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>サマリー</h2>
+        <div id="personalSummaryCards" class="summary-cards"></div>
+      </section>
+
+      <section class="panel">
+        <h2>時系列（加速度・心拍）</h2>
+        <div id="personalTimeSeriesChart" class="chart"></div>
+      </section>
+
+      <section class="panel">
+        <h2>心拍 vs 加速度合成値</h2>
+        <p>※ 合成加速度 1.1 以下のデータ点は除外</p>
+        <div id="personalScatterChart" class="chart"></div>
+      </section>
+
+      <section class="panel">
+        <h2>心拍ゾーン別滞在時間</h2>
+        <div class="chart-row-2">
+          <div id="personalHrZoneBarChart" class="chart"></div>
+          <div id="personalHrZonePieChart" class="chart"></div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>セッション情報</h2>
+        <div id="personalMetaInfo" class="meta-info"></div>
+      </section>
     </section>
 
-    <section class="panel">
-      <h2>セッション情報</h2>
-      <div id="metaInfo" class="meta-info"></div>
+    <section id="historyPage" class="page-section">
+      <section class="panel">
+        <div class="control-row">
+          <div class="control-group">
+            <label for="historyPlayerSelect">選手</label>
+            <select id="historyPlayerSelect"></select>
+          </div>
+          <div class="control-group">
+            <button id="historyReloadBtn">更新</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>心拍数情報</h2>
+        <div id="historyHrChart" class="chart"></div>
+      </section>
+
+      <section class="panel">
+        <h2>加速度情報</h2>
+        <div id="historyAccChart" class="chart"></div>
+      </section>
+
+      <section class="panel">
+        <h2>加速度 vs 心拍数の相関係数</h2>
+        <div id="historyCorrChart" class="chart"></div>
+      </section>
+
+      <section class="panel">
+        <h2>心拍数ゾーン分析</h2>
+        <div id="historyZoneChart" class="chart"></div>
+      </section>
+    </section>
+
+    <section id="teamSummaryPage" class="page-section">
+      <section class="panel">
+        <div class="control-row">
+          <div class="control-group">
+            <label for="teamDateSelect">日付</label>
+            <select id="teamDateSelect"></select>
+          </div>
+          <div class="control-group">
+            <button id="teamReloadBtn">更新</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>チーム全体サマリー</h2>
+        <div id="teamOverallSummaryCards" class="summary-cards"></div>
+      </section>
+
+      <section class="panel">
+        <h2>選手別パネル</h2>
+        <div id="teamPlayerGrid" class="team-player-grid"></div>
+      </section>
+    </section>
+
+    <section id="comparePage" class="page-section">
+      <section class="panel">
+        <div class="control-row">
+          <div class="control-group">
+            <label for="compareDateSelect">日付</label>
+            <select id="compareDateSelect"></select>
+          </div>
+          <div class="control-group">
+            <button id="compareReloadBtn">更新</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>平均心拍数 vs 平均加速度</h2>
+        <div id="compareScatterChart" class="chart"></div>
+      </section>
+
+      <section class="panel">
+        <div class="chart-row-2-equal">
+          <div>
+            <h2>選手別 平均心拍数</h2>
+            <div id="compareMeanHrBarChart" class="chart"></div>
+          </div>
+          <div>
+            <h2>選手別 平均加速度</h2>
+            <div id="compareMeanAccBarChart" class="chart"></div>
+          </div>
+        </div>
+      </section>
     </section>
   </main>
 

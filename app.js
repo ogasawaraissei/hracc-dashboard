@@ -1,10 +1,13 @@
 const state = {
   manifest: [],
-  currentMeta: null,
-  currentRows: []
+  dailySummaries: [],
+  fileCache: new Map(),
+  currentPage: "personalPage"
 };
 
 const MAX_POINTS = 5000;
+const SCATTER_ACC_THRESHOLD = 1.1;
+const DEFAULT_HR_MAX = 200;
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
@@ -16,149 +19,182 @@ document.addEventListener("DOMContentLoaded", async () => {
 });
 
 async function initialize() {
-  state.manifest = await loadManifest();
+  const [manifest, dailySummaries] = await Promise.all([
+    loadJson("manifest.json"),
+    loadJson("daily_summaries.json")
+  ]);
 
-  populatePlayerSelect();
-  populateDateSelect();
-  populateSessionSelect();
+  state.manifest = manifest;
+  state.dailySummaries = dailySummaries;
 
-  document.getElementById("playerSelect").addEventListener("change", handlePlayerChange);
-  document.getElementById("dateSelect").addEventListener("change", handleDateChange);
-  document.getElementById("sessionSelect").addEventListener("change", renderCurrentSelection);
-  document.getElementById("reloadBtn").addEventListener("click", renderCurrentSelection);
+  setupNavigation();
+  setupSelectors();
+  setupButtons();
 
-  await renderCurrentSelection();
+  populatePersonalSelectors();
+  populateHistorySelectors();
+  populateTeamSelectors();
+  populateCompareSelectors();
+
+  await renderCurrentPage();
 }
 
-async function loadManifest() {
-  const res = await fetch("manifest.json");
+async function loadJson(path) {
+  const res = await fetch(path);
   if (!res.ok) {
-    throw new Error("manifest.json を読み込めません");
+    throw new Error(`${path} を読み込めません`);
   }
   return await res.json();
+}
+
+async function loadCsvRows(path) {
+  if (state.fileCache.has(path)) {
+    return state.fileCache.get(path);
+  }
+
+  const promise = (async () => {
+    const res = await fetch(path);
+    if (!res.ok) {
+      throw new Error(`CSV を読み込めません: ${path}`);
+    }
+    const text = await res.text();
+    return parseCSV(text)
+      .map(normalizeRow)
+      .filter(r =>
+        Number.isFinite(r.t) &&
+        Number.isFinite(r.acc_mag) &&
+        Number.isFinite(r.heart_rate)
+      );
+  })();
+
+  state.fileCache.set(path, promise);
+  return promise;
+}
+
+function setupNavigation() {
+  document.querySelectorAll(".nav-btn").forEach(btn => {
+    btn.addEventListener("click", async () => {
+      const pageId = btn.dataset.page;
+      if (!pageId) return;
+
+      state.currentPage = pageId;
+
+      document.querySelectorAll(".nav-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      document.querySelectorAll(".page-section").forEach(section => {
+        section.classList.remove("active");
+      });
+
+      document.getElementById(pageId)?.classList.add("active");
+      await renderCurrentPage();
+    });
+  });
+}
+
+function setupSelectors() {
+  document.getElementById("personalPlayerSelect").addEventListener("change", async () => {
+    populatePersonalDateSelect();
+    populatePersonalSessionSelect();
+    await renderPersonalPage();
+  });
+
+  document.getElementById("personalDateSelect").addEventListener("change", async () => {
+    populatePersonalSessionSelect();
+    await renderPersonalPage();
+  });
+
+  document.getElementById("personalSessionSelect").addEventListener("change", renderPersonalPage);
+
+  document.getElementById("personalHrMaxInput").addEventListener("change", renderPersonalPage);
+  document.getElementById("personalHrMaxInput").addEventListener("keyup", async (e) => {
+    if (e.key === "Enter") {
+      await renderPersonalPage();
+    }
+  });
+
+  document.getElementById("historyPlayerSelect").addEventListener("change", renderHistoryPage);
+  document.getElementById("teamDateSelect").addEventListener("change", renderTeamSummaryPage);
+  document.getElementById("compareDateSelect").addEventListener("change", renderComparePage);
+}
+
+function setupButtons() {
+  document.getElementById("personalReloadBtn").addEventListener("click", renderPersonalPage);
+  document.getElementById("historyReloadBtn").addEventListener("click", renderHistoryPage);
+  document.getElementById("teamReloadBtn").addEventListener("click", renderTeamSummaryPage);
+  document.getElementById("compareReloadBtn").addEventListener("click", renderComparePage);
 }
 
 function uniqueSorted(values) {
   return [...new Set(values)].sort();
 }
 
-function populatePlayerSelect() {
-  const select = document.getElementById("playerSelect");
-  const players = uniqueSorted(state.manifest.map(item => item.player_id));
+function getPlayers() {
+  return uniqueSorted(state.manifest.map(item => item.player_id));
+}
 
-  select.innerHTML = players
-    .map(playerId => `<option value="${playerId}">${playerId}</option>`)
+function getDates() {
+  return uniqueSorted(state.manifest.map(item => item.date));
+}
+
+function populateOptions(selectEl, values, formatter = v => v) {
+  selectEl.innerHTML = values
+    .map(v => `<option value="${escapeHtml(String(v))}">${escapeHtml(String(formatter(v)))}</option>`)
     .join("");
 }
 
-function populateDateSelect() {
-  const playerId = document.getElementById("playerSelect").value;
-  const select = document.getElementById("dateSelect");
+function populatePersonalSelectors() {
+  populateOptions(document.getElementById("personalPlayerSelect"), getPlayers());
+  populatePersonalDateSelect();
+  populatePersonalSessionSelect();
+}
 
+function populatePersonalDateSelect() {
+  const playerId = document.getElementById("personalPlayerSelect").value;
   const dates = uniqueSorted(
-    state.manifest
-      .filter(item => item.player_id === playerId)
-      .map(item => item.date)
+    state.manifest.filter(item => item.player_id === playerId).map(item => item.date)
   );
-
-  select.innerHTML = dates
-    .map(date => `<option value="${date}">${date}</option>`)
-    .join("");
+  populateOptions(document.getElementById("personalDateSelect"), dates);
 }
 
-function getSessionLabel(item) {
-  const start = item.start_time || "----";
-  const end = item.end_time || "----";
-  return `${start}-${end}`;
-}
+function populatePersonalSessionSelect() {
+  const playerId = document.getElementById("personalPlayerSelect").value;
+  const date = document.getElementById("personalDateSelect").value;
+  const sessions = state.manifest
+    .filter(item => item.player_id === playerId && item.date === date)
+    .sort((a, b) => `${a.start_time}${a.end_time}`.localeCompare(`${b.start_time}${b.end_time}`));
 
-function populateSessionSelect() {
-  const playerId = document.getElementById("playerSelect").value;
-  const date = document.getElementById("dateSelect").value;
-  const select = document.getElementById("sessionSelect");
-
-  const sessions = state.manifest.filter(item =>
-    item.player_id === playerId && item.date === date
-  );
-
+  const select = document.getElementById("personalSessionSelect");
   select.innerHTML = sessions
-    .map((item, index) => `<option value="${index}">${getSessionLabel(item)}</option>`)
+    .map((item, idx) => {
+      const label = `${item.start_time || "----"}-${item.end_time || "----"}`;
+      return `<option value="${idx}">${escapeHtml(label)}</option>`;
+    })
     .join("");
 }
 
-function handlePlayerChange() {
-  populateDateSelect();
-  populateSessionSelect();
-  renderCurrentSelection();
+function populateHistorySelectors() {
+  populateOptions(document.getElementById("historyPlayerSelect"), getPlayers());
 }
 
-function handleDateChange() {
-  populateSessionSelect();
-  renderCurrentSelection();
+function populateTeamSelectors() {
+  populateOptions(document.getElementById("teamDateSelect"), getDates());
 }
 
-function getSelectedMeta() {
-  const playerId = document.getElementById("playerSelect").value;
-  const date = document.getElementById("dateSelect").value;
-  const sessionIndex = Number(document.getElementById("sessionSelect").value || 0);
-
-  const sessions = state.manifest.filter(item =>
-    item.player_id === playerId && item.date === date
-  );
-
-  return sessions[sessionIndex] || null;
+function populateCompareSelectors() {
+  populateOptions(document.getElementById("compareDateSelect"), getDates());
 }
 
-async function renderCurrentSelection() {
-  const meta = getSelectedMeta();
-  if (!meta) {
-    clearDisplay();
-    return;
+async function renderCurrentPage() {
+  if (state.currentPage === "personalPage") {
+    await renderPersonalPage();
+  } else if (state.currentPage === "historyPage") {
+    await renderHistoryPage();
+  } else if (state.currentPage === "teamSummaryPage") {
+    await renderTeamSummaryPage();
+  } else if (state.currentPage === "comparePage") {
+    await renderComparePage();
   }
-
-  state.currentMeta = meta;
-
-  const csvText = await loadText(meta.file);
-  const rows = parseCSV(csvText)
-    .map(normalizeRow)
-    .filter(r =>
-      Number.isFinite(r.t) &&
-      Number.isFinite(r.acc_mag) &&
-      Number.isFinite(r.heart_rate)
-    );
-
-  state.currentRows = rows;
-
-  clearDisplay();
-
-  try {
-    renderSummary(meta, rows);
-    renderMetaInfo(meta, rows);
-  } catch (error) {
-    console.error("summary/meta render error:", error);
-  }
-
-  try {
-    renderTimeSeriesChart(rows);
-  } catch (error) {
-    console.error("timeSeriesChart render error:", error);
-    document.getElementById("timeSeriesChart").innerHTML = "<p>時系列グラフの描画に失敗しました。</p>";
-  }
-
-  try {
-    renderScatter(rows);
-  } catch (error) {
-    console.error("scatterChart render error:", error);
-    document.getElementById("scatterChart").innerHTML = "<p>散布図の描画に失敗しました。</p>";
-  }
-}
-
-async function loadText(path) {
-  const res = await fetch(path);
-  if (!res.ok) {
-    throw new Error(`ファイルを読み込めません: ${path}`);
-  }
-  return await res.text();
 }
 
 function parseCSV(text) {
@@ -189,6 +225,15 @@ function normalizeRow(row) {
 function toMillis(timestamp) {
   const t = new Date(timestamp).getTime();
   return Number.isFinite(t) ? t : NaN;
+}
+
+function escapeHtml(text) {
+  return String(text)
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
 }
 
 function basicStats(values) {
@@ -246,7 +291,7 @@ function correlation(x, y) {
   return numerator / denominator;
 }
 
-function downsampleRows(rows, maxPoints) {
+function downsampleRows(rows, maxPoints = MAX_POINTS) {
   if (rows.length <= maxPoints) return rows;
 
   const step = Math.ceil(rows.length / maxPoints);
@@ -257,71 +302,146 @@ function downsampleRows(rows, maxPoints) {
   return sampled;
 }
 
-function renderSummary(meta, rows) {
-  const accValues = rows.map(r => r.acc_mag);
-  const hrValues = rows.map(r => r.heart_rate);
+function getScatterRows(rows) {
+  return rows.filter(r =>
+    Number.isFinite(r.acc_mag) &&
+    Number.isFinite(r.heart_rate) &&
+    r.acc_mag > SCATTER_ACC_THRESHOLD
+  );
+}
 
-  const accStats = basicStats(accValues);
-  const hrStats = basicStats(hrValues);
-  const corr = correlation(accValues, hrValues);
+function getHrMaxValue() {
+  const raw = Number(document.getElementById("personalHrMaxInput").value);
+  if (!Number.isFinite(raw) || raw <= 0) return DEFAULT_HR_MAX;
+  return raw;
+}
 
-  const cards = [
-    { label: "選手ID", value: meta.player_id || "-" },
-    { label: "日付", value: meta.date || "-" },
-    { label: "データ点数", value: rows.length.toString() },
-    { label: "平均加速度", value: Number.isFinite(accStats.mean) ? accStats.mean.toFixed(2) : "-" },
-    { label: "最大加速度", value: Number.isFinite(accStats.max) ? accStats.max.toFixed(2) : "-" },
-    { label: "平均心拍", value: Number.isFinite(hrStats.mean) ? `${hrStats.mean.toFixed(1)} bpm` : "-" },
-    { label: "最大心拍", value: Number.isFinite(hrStats.max) ? `${hrStats.max.toFixed(1)} bpm` : "-" },
-    { label: "相関", value: Number.isFinite(corr) ? corr.toFixed(3) : "-" }
-  ];
+function computeZoneDistribution(rows, hrMax) {
+  const valid = rows.filter(r => Number.isFinite(r.heart_rate));
+  const total = valid.length;
 
-  const container = document.getElementById("summaryCards");
+  const labels = ["49%以下", "50-59%", "60-69%", "70-79%", "80-89%", "90%以上"];
+  const counts = [0, 0, 0, 0, 0, 0];
+
+  for (const row of valid) {
+    const pct = (row.heart_rate / hrMax) * 100;
+    if (pct <= 49) {
+      counts[0] += 1;
+    } else if (pct < 60) {
+      counts[1] += 1;
+    } else if (pct < 70) {
+      counts[2] += 1;
+    } else if (pct < 80) {
+      counts[3] += 1;
+    } else if (pct < 90) {
+      counts[4] += 1;
+    } else {
+      counts[5] += 1;
+    }
+  }
+
+  const ratios = counts.map(c => total > 0 ? (c / total) * 100 : 0);
+  return { labels, counts, ratios, total };
+}
+
+function clearPlot(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  try {
+    Plotly.purge(id);
+  } catch (e) {
+  }
+  el.innerHTML = "";
+}
+
+function renderCards(containerId, cards) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
   container.innerHTML = cards.map(card => `
     <div class="summary-card">
-      <div class="label">${card.label}</div>
-      <div class="value">${card.value}</div>
+      <div class="label">${escapeHtml(card.label)}</div>
+      <div class="value">${escapeHtml(card.value)}</div>
     </div>
   `).join("");
 }
 
-function renderMetaInfo(meta, rows) {
-  const first = rows[0]?.timestamp || "-";
-  const last = rows[rows.length - 1]?.timestamp || "-";
+function getSelectedPersonalMeta() {
+  const playerId = document.getElementById("personalPlayerSelect").value;
+  const date = document.getElementById("personalDateSelect").value;
+  const sessionIndex = Number(document.getElementById("personalSessionSelect").value || 0);
 
-  const html = `
-    <div><strong>選手ID:</strong> ${meta.player_id || "-"}</div>
-    <div><strong>選手名:</strong> ${meta.player_name || "-"}</div>
-    <div><strong>日付:</strong> ${meta.date || "-"}</div>
-    <div><strong>時間帯:</strong> ${meta.start_time || "-"} - ${meta.end_time || "-"}</div>
-    <div><strong>セッション種別:</strong> ${meta.session_type || "-"}</div>
-    <div><strong>CSV:</strong> <code>${meta.file || "-"}</code></div>
-    <div><strong>先頭時刻:</strong> ${first}</div>
-    <div><strong>末尾時刻:</strong> ${last}</div>
-  `;
+  const sessions = state.manifest
+    .filter(item => item.player_id === playerId && item.date === date)
+    .sort((a, b) => `${a.start_time}${a.end_time}`.localeCompare(`${b.start_time}${b.end_time}`));
 
-  document.getElementById("metaInfo").innerHTML = html;
+  return sessions[sessionIndex] || null;
 }
 
-function renderTimeSeriesChart(rows) {
-  const sampled = downsampleRows(rows, MAX_POINTS);
+async function renderPersonalPage() {
+  const meta = getSelectedPersonalMeta();
+  renderCards("personalSummaryCards", []);
+  document.getElementById("personalMetaInfo").innerHTML = "";
+  clearPlot("personalTimeSeriesChart");
+  clearPlot("personalScatterChart");
+  clearPlot("personalHrZoneBarChart");
+  clearPlot("personalHrZonePieChart");
 
-  const x = sampled.map(r => r.timestamp);
-  const acc = sampled.map(r => r.acc_mag);
-  const hr = sampled.map(r => r.heart_rate);
+  if (!meta) return;
 
-  Plotly.newPlot("timeSeriesChart", [
+  const rows = await loadCsvRows(meta.file);
+  const hrMax = getHrMaxValue();
+  const accStats = basicStats(rows.map(r => r.acc_mag));
+  const hrStats = basicStats(rows.map(r => r.heart_rate));
+  const scatterRows = getScatterRows(rows);
+  const corr = correlation(
+    scatterRows.map(r => r.acc_mag),
+    scatterRows.map(r => r.heart_rate)
+  );
+
+  renderCards("personalSummaryCards", [
+    { label: "選手ID", value: meta.player_id || "-" },
+    { label: "日付", value: meta.date || "-" },
+    { label: "データ点数", value: String(rows.length) },
+    { label: "平均加速度", value: Number.isFinite(accStats.mean) ? accStats.mean.toFixed(2) : "-" },
+    { label: "最大加速度", value: Number.isFinite(accStats.max) ? accStats.max.toFixed(2) : "-" },
+    { label: "平均心拍", value: Number.isFinite(hrStats.mean) ? `${hrStats.mean.toFixed(1)} bpm` : "-" },
+    { label: "最大心拍", value: Number.isFinite(hrStats.max) ? `${hrStats.max.toFixed(1)} bpm` : "-" },
+    { label: "散布図対象点数", value: String(scatterRows.length) },
+    { label: "相関", value: Number.isFinite(corr) ? corr.toFixed(3) : "-" }
+  ]);
+
+  const first = rows[0]?.timestamp || "-";
+  const last = rows[rows.length - 1]?.timestamp || "-";
+  document.getElementById("personalMetaInfo").innerHTML = `
+    <div><strong>選手ID:</strong> ${escapeHtml(meta.player_id || "-")}</div>
+    <div><strong>日付:</strong> ${escapeHtml(meta.date || "-")}</div>
+    <div><strong>時間帯:</strong> ${escapeHtml(meta.start_time || "-")} - ${escapeHtml(meta.end_time || "-")}</div>
+    <div><strong>セッション種別:</strong> ${escapeHtml(meta.session_type || "-")}</div>
+    <div><strong>CSV:</strong> <code>${escapeHtml(meta.file || "-")}</code></div>
+    <div><strong>先頭時刻:</strong> ${escapeHtml(first)}</div>
+    <div><strong>末尾時刻:</strong> ${escapeHtml(last)}</div>
+    <div><strong>心拍ゾーン基準最大値:</strong> ${escapeHtml(String(hrMax))} bpm</div>
+  `;
+
+  renderPersonalTimeSeries(rows);
+  renderPersonalScatter(scatterRows);
+  renderPersonalZoneCharts(rows, hrMax);
+}
+
+function renderPersonalTimeSeries(rows) {
+  const sampled = downsampleRows(rows);
+  Plotly.newPlot("personalTimeSeriesChart", [
     {
-      x,
-      y: acc,
+      x: sampled.map(r => r.timestamp),
+      y: sampled.map(r => r.acc_mag),
       type: "scattergl",
       mode: "lines",
       name: "Acceleration Magnitude",
       yaxis: "y1"
     },
     {
-      x,
-      y: hr,
+      x: sampled.map(r => r.timestamp),
+      y: sampled.map(r => r.heart_rate),
       type: "scattergl",
       mode: "lines",
       name: "Heart Rate",
@@ -330,55 +450,398 @@ function renderTimeSeriesChart(rows) {
   ], {
     margin: { t: 20 },
     xaxis: { title: "Time" },
-    yaxis: { title: "Acceleration Magnitude", side: "left" },
+    yaxis: { title: "Acceleration Magnitude" },
     yaxis2: {
       title: "Heart Rate (bpm)",
       overlaying: "y",
       side: "right"
     },
     legend: { orientation: "h" }
-  }, {
-    responsive: true
-  });
+  }, { responsive: true });
 }
 
-function renderScatter(rows) {
-  const sampled = downsampleRows(rows, MAX_POINTS);
-
-  const x = sampled.map(r => r.acc_mag);
-  const y = sampled.map(r => r.heart_rate);
-  const text = sampled.map(r => r.timestamp);
-
-  Plotly.newPlot("scatterChart", [
+function renderPersonalScatter(scatterRows) {
+  const sampled = downsampleRows(scatterRows);
+  Plotly.newPlot("personalScatterChart", [
     {
-      x,
-      y,
-      text,
+      x: sampled.map(r => r.acc_mag),
+      y: sampled.map(r => r.heart_rate),
+      text: sampled.map(r => r.timestamp),
       type: "scattergl",
       mode: "markers",
-      name: "HR vs ACC"
+      name: "HR vs ACC (>1.1)"
     }
   ], {
     margin: { t: 20 },
     xaxis: { title: "Acceleration Magnitude" },
     yaxis: { title: "Heart Rate (bpm)" }
-  }, {
-    responsive: true
-  });
+  }, { responsive: true });
 }
 
-function clearDisplay() {
-  document.getElementById("summaryCards").innerHTML = "";
-  document.getElementById("metaInfo").innerHTML = "";
+function renderPersonalZoneCharts(rows, hrMax) {
+  const zone = computeZoneDistribution(rows, hrMax);
 
-  ["timeSeriesChart", "scatterChart"].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) {
-      try {
-        Plotly.purge(id);
-      } catch (e) {
-      }
-      el.innerHTML = "";
+  Plotly.newPlot("personalHrZoneBarChart", [
+    {
+      x: zone.ratios,
+      y: zone.labels,
+      type: "bar",
+      orientation: "h",
+      text: zone.ratios.map(v => `${v.toFixed(1)}%`),
+      textposition: "auto",
+      name: "滞在時間割合"
     }
-  });
+  ], {
+    margin: { t: 20, l: 110 },
+    xaxis: { title: "割合 (%)", range: [0, 100] },
+    yaxis: {
+      title: "",
+      categoryorder: "array",
+      categoryarray: zone.labels
+    }
+  }, { responsive: true });
+
+  Plotly.newPlot("personalHrZonePieChart", [
+    {
+      labels: zone.labels,
+      values: zone.ratios,
+      type: "pie",
+      textinfo: "label+percent",
+      sort: false
+    }
+  ], {
+    margin: { t: 20 }
+  }, { responsive: true });
+}
+
+function getDailyRowsForPlayerDate(playerId, date) {
+  const matching = state.dailySummaries.find(item => item.player_id === playerId && item.date === date);
+  return matching || null;
+}
+
+async function getCombinedRowsForPlayerDate(playerId, date) {
+  const manifestItems = state.manifest
+    .filter(item => item.player_id === playerId && item.date === date)
+    .sort((a, b) => `${a.start_time}${a.end_time}`.localeCompare(`${b.start_time}${b.end_time}`));
+
+  const rowsList = await Promise.all(manifestItems.map(item => loadCsvRows(item.file)));
+  const combined = rowsList.flat().sort((a, b) => a.t - b.t);
+  return combined;
+}
+
+async function renderHistoryPage() {
+  clearPlot("historyHrChart");
+  clearPlot("historyAccChart");
+  clearPlot("historyCorrChart");
+  clearPlot("historyZoneChart");
+
+  const playerId = document.getElementById("historyPlayerSelect").value;
+  const rows = state.dailySummaries
+    .filter(item => item.player_id === playerId)
+    .sort((a, b) => a.date.localeCompare(b.date));
+
+  if (!rows.length) return;
+
+  const dates = rows.map(r => r.date);
+
+  Plotly.newPlot("historyHrChart", [
+    {
+      x: dates,
+      y: rows.map(r => r.mean_hr),
+      type: "scatter",
+      mode: "lines+markers",
+      name: "平均心拍"
+    },
+    {
+      x: dates,
+      y: rows.map(r => r.max_hr),
+      type: "scatter",
+      mode: "lines+markers",
+      name: "最大心拍"
+    }
+  ], {
+    margin: { t: 20 },
+    xaxis: { title: "練習日" },
+    yaxis: { title: "Heart Rate (bpm)" }
+  }, { responsive: true });
+
+  Plotly.newPlot("historyAccChart", [
+    {
+      x: dates,
+      y: rows.map(r => r.mean_acc),
+      type: "scatter",
+      mode: "lines+markers",
+      name: "平均加速度"
+    }
+  ], {
+    margin: { t: 20 },
+    xaxis: { title: "練習日" },
+    yaxis: { title: "Acceleration Magnitude" }
+  }, { responsive: true });
+
+  Plotly.newPlot("historyCorrChart", [
+    {
+      x: dates,
+      y: rows.map(r => r.corr_filtered),
+      type: "scatter",
+      mode: "lines+markers",
+      name: "相関係数"
+    }
+  ], {
+    margin: { t: 20 },
+    xaxis: { title: "練習日" },
+    yaxis: { title: "相関係数", range: [-1, 1] }
+  }, { responsive: true });
+
+  const zoneKeys = [
+    ["49以下", "49%以下"],
+    ["50_59", "50-59%"],
+    ["60_69", "60-69%"],
+    ["70_79", "70-79%"],
+    ["80_89", "80-89%"],
+    ["90以上", "90%以上"]
+  ];
+
+  Plotly.newPlot("historyZoneChart", zoneKeys.map(([key, label]) => ({
+    x: dates,
+    y: rows.map(r => (r.zone_ratios_200 && Number.isFinite(r.zone_ratios_200[key])) ? r.zone_ratios_200[key] : 0),
+    type: "scatter",
+    mode: "lines+markers",
+    name: label
+  })), {
+    margin: { t: 20 },
+    xaxis: { title: "練習日" },
+    yaxis: { title: "ゾーン時間割合 (%)", range: [0, 100] }
+  }, { responsive: true });
+}
+
+function weightedMean(records, valueKey, weightKey = "n_samples") {
+  let sumValue = 0;
+  let sumWeight = 0;
+  for (const r of records) {
+    const value = Number(r[valueKey]);
+    const weight = Number(r[weightKey]);
+    if (!Number.isFinite(value) || !Number.isFinite(weight) || weight <= 0) continue;
+    sumValue += value * weight;
+    sumWeight += weight;
+  }
+  return sumWeight > 0 ? sumValue / sumWeight : NaN;
+}
+
+function meanIgnoringNaN(values) {
+  const valid = values.filter(v => Number.isFinite(v));
+  if (!valid.length) return NaN;
+  return valid.reduce((a, b) => a + b, 0) / valid.length;
+}
+
+async function renderTeamSummaryPage() {
+  renderCards("teamOverallSummaryCards", []);
+  document.getElementById("teamPlayerGrid").innerHTML = "";
+
+  const date = document.getElementById("teamDateSelect").value;
+  const playerSummaries = state.dailySummaries
+    .filter(item => item.date === date)
+    .sort((a, b) => a.player_id.localeCompare(b.player_id));
+
+  if (!playerSummaries.length) return;
+
+  const overallMeanHr = weightedMean(playerSummaries, "mean_hr");
+  const overallMeanAcc = weightedMean(playerSummaries, "mean_acc");
+  const overallMaxHr = Math.max(...playerSummaries.map(r => Number(r.max_hr)).filter(Number.isFinite));
+  const sessionDuration = Math.max(...playerSummaries.map(r => Number(r.duration_minutes)).filter(Number.isFinite));
+  const avgCorr = meanIgnoringNaN(playerSummaries.map(r => Number(r.corr_filtered)));
+
+  renderCards("teamOverallSummaryCards", [
+    { label: "全体平均心拍数", value: Number.isFinite(overallMeanHr) ? `${overallMeanHr.toFixed(1)} bpm` : "-" },
+    { label: "全体平均加速度", value: Number.isFinite(overallMeanAcc) ? overallMeanAcc.toFixed(2) : "-" },
+    { label: "最大心拍数", value: Number.isFinite(overallMaxHr) ? `${overallMaxHr.toFixed(1)} bpm` : "-" },
+    { label: "計測時間", value: Number.isFinite(sessionDuration) ? `${sessionDuration.toFixed(1)} 分` : "-" },
+    { label: "平均相関係数", value: Number.isFinite(avgCorr) ? avgCorr.toFixed(3) : "-" }
+  ]);
+
+  const grid = document.getElementById("teamPlayerGrid");
+  grid.innerHTML = playerSummaries.map((summary, idx) => `
+    <div class="team-player-card" id="teamPlayerCard-${idx}">
+      <h3>選手 ${escapeHtml(summary.player_id)}</h3>
+      <div class="mini-metrics">
+        <div class="mini-metric"><div class="label">平均心拍数</div><div class="value">${Number.isFinite(summary.mean_hr) ? Number(summary.mean_hr).toFixed(1) : "-"}</div></div>
+        <div class="mini-metric"><div class="label">最大心拍数</div><div class="value">${Number.isFinite(summary.max_hr) ? Number(summary.max_hr).toFixed(1) : "-"}</div></div>
+        <div class="mini-metric"><div class="label">平均加速度</div><div class="value">${Number.isFinite(summary.mean_acc) ? Number(summary.mean_acc).toFixed(2) : "-"}</div></div>
+        <div class="mini-metric"><div class="label">相関係数</div><div class="value">${Number.isFinite(summary.corr_filtered) ? Number(summary.corr_filtered).toFixed(3) : "-"}</div></div>
+      </div>
+
+      <div id="teamHrHist-${idx}" class="chart-small"></div>
+      <div id="teamAccHist-${idx}" class="chart-small"></div>
+      <div id="teamTimeSeries-${idx}" class="chart-small"></div>
+      <div id="teamScatter-${idx}" class="chart-small"></div>
+    </div>
+  `).join("");
+
+  for (let i = 0; i < playerSummaries.length; i++) {
+    const summary = playerSummaries[i];
+    const rows = await getCombinedRowsForPlayerDate(summary.player_id, summary.date);
+    renderPlayerPanelCharts(i, rows, summary);
+  }
+}
+
+function renderPlayerPanelCharts(index, rows, summary) {
+  const sampled = downsampleRows(rows, 3000);
+  const scatterRows = downsampleRows(getScatterRows(rows), 3000);
+
+  Plotly.newPlot(`teamHrHist-${index}`, [
+    {
+      x: rows.map(r => r.heart_rate),
+      type: "histogram",
+      name: "Heart Rate"
+    }
+  ], {
+    margin: { t: 20 },
+    title: { text: "心拍ヒストグラム", font: { size: 14 } },
+    xaxis: { title: "Heart Rate (bpm)" },
+    yaxis: { title: "Count" }
+  }, { responsive: true });
+
+  Plotly.newPlot(`teamAccHist-${index}`, [
+    {
+      x: rows.map(r => r.acc_mag),
+      type: "histogram",
+      name: "Acceleration"
+    }
+  ], {
+    margin: { t: 20 },
+    title: { text: "加速度ヒストグラム", font: { size: 14 } },
+    xaxis: { title: "Acceleration Magnitude" },
+    yaxis: { title: "Count" }
+  }, { responsive: true });
+
+  Plotly.newPlot(`teamTimeSeries-${index}`, [
+    {
+      x: sampled.map(r => r.timestamp),
+      y: sampled.map(r => r.acc_mag),
+      type: "scattergl",
+      mode: "lines",
+      name: "Acceleration",
+      yaxis: "y1"
+    },
+    {
+      x: sampled.map(r => r.timestamp),
+      y: sampled.map(r => r.heart_rate),
+      type: "scattergl",
+      mode: "lines",
+      name: "Heart Rate",
+      yaxis: "y2"
+    }
+  ], {
+    margin: { t: 20 },
+    title: { text: "時系列", font: { size: 14 } },
+    xaxis: { title: "Time" },
+    yaxis: { title: "Acc" },
+    yaxis2: { title: "HR", overlaying: "y", side: "right" },
+    showlegend: false
+  }, { responsive: true });
+
+  Plotly.newPlot(`teamScatter-${index}`, [
+    {
+      x: scatterRows.map(r => r.acc_mag),
+      y: scatterRows.map(r => r.heart_rate),
+      text: scatterRows.map(r => r.timestamp),
+      type: "scattergl",
+      mode: "markers",
+      name: "Scatter"
+    }
+  ], {
+    margin: { t: 20 },
+    title: { text: "加速度 vs 心拍", font: { size: 14 } },
+    xaxis: { title: "Acc" },
+    yaxis: { title: "HR" }
+  }, { responsive: true });
+}
+
+async function renderComparePage() {
+  clearPlot("compareScatterChart");
+  clearPlot("compareMeanHrBarChart");
+  clearPlot("compareMeanAccBarChart");
+
+  const date = document.getElementById("compareDateSelect").value;
+  const rows = state.dailySummaries
+    .filter(item => item.date === date)
+    .sort((a, b) => String(a.player_id).localeCompare(String(b.player_id)));
+
+  if (!rows.length) return;
+
+  Plotly.newPlot("compareScatterChart", [
+    {
+      x: rows.map(r => Number(r.mean_acc)),
+      y: rows.map(r => Number(r.mean_hr)),
+      text: rows.map(r => `選手 ${String(r.player_id)}`),
+      mode: "markers+text",
+      type: "scatter",
+      textposition: "top center",
+      name: "平均値"
+    }
+  ], {
+    margin: { t: 20 },
+    xaxis: { title: "平均加速度" },
+    yaxis: { title: "平均心拍数 (bpm)" }
+  }, { responsive: true });
+
+  const hrSorted = [...rows]
+    .map(r => ({
+      ...r,
+      player_id_str: String(r.player_id),
+      mean_hr_num: Number(r.mean_hr)
+    }))
+    .sort((a, b) => b.mean_hr_num - a.mean_hr_num);
+
+  Plotly.newPlot("compareMeanHrBarChart", [
+    {
+      x: hrSorted.map(r => r.mean_hr_num),
+      y: hrSorted.map(r => r.player_id_str),
+      type: "bar",
+      orientation: "h",
+      text: hrSorted.map(r => r.mean_hr_num.toFixed(1)),
+      textposition: "auto",
+      name: "平均心拍数"
+    }
+  ], {
+    margin: { t: 20, l: 100 },
+    xaxis: { title: "平均心拍数 (bpm)" },
+    yaxis: {
+      title: "選手ID",
+      type: "category",
+      categoryorder: "array",
+      categoryarray: hrSorted.map(r => r.player_id_str),
+      autorange: "reversed"
+    }
+  }, { responsive: true });
+
+  const accSorted = [...rows]
+    .map(r => ({
+      ...r,
+      player_id_str: String(r.player_id),
+      mean_acc_num: Number(r.mean_acc)
+    }))
+    .sort((a, b) => b.mean_acc_num - a.mean_acc_num);
+
+  Plotly.newPlot("compareMeanAccBarChart", [
+    {
+      x: accSorted.map(r => r.mean_acc_num),
+      y: accSorted.map(r => r.player_id_str),
+      type: "bar",
+      orientation: "h",
+      text: accSorted.map(r => r.mean_acc_num.toFixed(2)),
+      textposition: "auto",
+      name: "平均加速度"
+    }
+  ], {
+    margin: { t: 20, l: 100 },
+    xaxis: { title: "平均加速度" },
+    yaxis: {
+      title: "選手ID",
+      type: "category",
+      categoryorder: "array",
+      categoryarray: accSorted.map(r => r.player_id_str),
+      autorange: "reversed"
+    }
+  }, { responsive: true });
 }
