@@ -9,6 +9,15 @@
     "file": "data/20260417/pV001_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V001",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV001_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V002",
     "player_name": "",
     "date": "2026-04-17",
@@ -16,6 +25,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV002_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V002",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV002_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V003",
@@ -27,6 +45,15 @@
     "file": "data/20260417/pV003_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V003",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV003_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V004",
     "player_name": "",
     "date": "2026-04-17",
@@ -34,6 +61,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV004_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V004",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV004_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V005",
@@ -45,6 +81,15 @@
     "file": "data/20260417/pV005_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V005",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV005_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V006",
     "player_name": "",
     "date": "2026-04-17",
@@ -52,6 +97,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV006_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V006",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV006_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V007",
@@ -63,6 +117,15 @@
     "file": "data/20260417/pV007_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V007",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV007_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V008",
     "player_name": "",
     "date": "2026-04-17",
@@ -70,6 +133,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV008_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V008",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV008_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V009",
@@ -81,6 +153,15 @@
     "file": "data/20260417/pV009_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V009",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV009_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V010",
     "player_name": "",
     "date": "2026-04-17",
@@ -88,6 +169,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV010_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V010",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV010_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V011",
@@ -99,6 +189,15 @@
     "file": "data/20260417/pV011_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V011",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV011_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V012",
     "player_name": "",
     "date": "2026-04-17",
@@ -106,6 +205,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV012_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V012",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV012_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V013",
@@ -117,6 +225,15 @@
     "file": "data/20260417/pV013_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V013",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV013_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V014",
     "player_name": "",
     "date": "2026-04-17",
@@ -124,6 +241,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV014_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V014",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV014_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V015",
@@ -135,6 +261,15 @@
     "file": "data/20260417/pV015_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V015",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV015_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V016",
     "player_name": "",
     "date": "2026-04-17",
@@ -142,6 +277,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV016_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V016",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV016_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V017",
@@ -153,6 +297,15 @@
     "file": "data/20260417/pV017_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V017",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV017_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V018",
     "player_name": "",
     "date": "2026-04-17",
@@ -160,6 +313,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV018_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V018",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV018_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V019",
@@ -180,6 +342,15 @@
     "file": "data/20260417/pV020_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V020",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV020_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V021",
     "player_name": "",
     "date": "2026-04-17",
@@ -187,6 +358,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV021_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V021",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV021_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V022",
@@ -198,6 +378,15 @@
     "file": "data/20260417/pV022_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V022",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV022_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V023",
     "player_name": "",
     "date": "2026-04-17",
@@ -205,6 +394,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV023_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V023",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV023_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V024",
@@ -216,6 +414,15 @@
     "file": "data/20260417/pV024_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V024",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV024_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V025",
     "player_name": "",
     "date": "2026-04-17",
@@ -223,6 +430,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV025_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V025",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV025_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V026",
@@ -234,6 +450,15 @@
     "file": "data/20260417/pV026_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V026",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV026_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V027",
     "player_name": "",
     "date": "2026-04-17",
@@ -241,6 +466,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV027_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V027",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV027_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V028",
@@ -252,6 +486,15 @@
     "file": "data/20260417/pV028_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V028",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV028_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V029",
     "player_name": "",
     "date": "2026-04-17",
@@ -259,6 +502,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV029_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V029",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV029_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V030",
@@ -279,6 +531,15 @@
     "file": "data/20260417/pV031_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V031",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV031_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V032",
     "player_name": "",
     "date": "2026-04-17",
@@ -286,6 +547,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV032_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V032",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV032_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V033",
@@ -297,6 +567,15 @@
     "file": "data/20260417/pV033_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V033",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV033_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V034",
     "player_name": "",
     "date": "2026-04-17",
@@ -304,6 +583,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV034_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V034",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV034_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V035",
@@ -315,6 +603,15 @@
     "file": "data/20260417/pV035_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V035",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV035_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V036",
     "player_name": "",
     "date": "2026-04-17",
@@ -322,6 +619,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV036_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V036",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV036_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V037",
@@ -333,6 +639,15 @@
     "file": "data/20260417/pV037_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V037",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV037_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V038",
     "player_name": "",
     "date": "2026-04-17",
@@ -340,6 +655,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV038_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V038",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV038_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V039",
@@ -351,6 +675,15 @@
     "file": "data/20260417/pV039_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V039",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV039_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V040",
     "player_name": "",
     "date": "2026-04-17",
@@ -358,6 +691,15 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV040_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V040",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV040_2026-04-24_1045_1150.csv"
   },
   {
     "player_id": "V041",
@@ -369,6 +711,15 @@
     "file": "data/20260417/pV041_2026-04-17_1050_1146.csv"
   },
   {
+    "player_id": "V041",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV041_2026-04-24_1045_1150.csv"
+  },
+  {
     "player_id": "V042",
     "player_name": "",
     "date": "2026-04-17",
@@ -376,5 +727,23 @@
     "start_time": "1050",
     "end_time": "1146",
     "file": "data/20260417/pV042_2026-04-17_1050_1146.csv"
+  },
+  {
+    "player_id": "V042",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV042_2026-04-24_1045_1150.csv"
+  },
+  {
+    "player_id": "V043",
+    "player_name": "",
+    "date": "2026-04-24",
+    "session_type": "default",
+    "start_time": "1045",
+    "end_time": "1150",
+    "file": "data/20260424/pV043_2026-04-24_1045_1150.csv"
   }
 ]
